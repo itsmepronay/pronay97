@@ -5,59 +5,80 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Pronay Sarkar | AR Specialist</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #f4f4f4;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #ffffff);
       color: #333;
     }
     .container {
-      max-width: 900px;
+      max-width: 1000px;
       margin: auto;
-      padding: 2rem;
-      background: #fff;
+      padding: 3rem 2rem;
+      background: #ffffff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      margin-top: 2rem;
     }
     header {
       text-align: center;
-      margin-bottom: 2rem;
+      margin-bottom: 2.5rem;
     }
     h1 {
       margin: 0;
-      font-size: 2rem;
-      color: #004080;
+      font-size: 2.5rem;
+      color: #00796b;
     }
     h2 {
-      color: #004080;
+      color: #004d40;
       border-bottom: 2px solid #ddd;
       padding-bottom: 5px;
+      margin-top: 2rem;
     }
-    .info, .section {
+    .contact {
+      font-size: 1rem;
+      color: #555;
+    }
+    .section {
       margin-bottom: 1.5rem;
     }
     ul {
       padding-left: 20px;
     }
-    .contact {
-      font-size: 0.9rem;
-      color: #666;
-    }
     .skills, .languages {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
+      margin-top: 0.5rem;
     }
     .badge {
-      background: #e0e0e0;
-      border-radius: 5px;
-      padding: 5px 10px;
+      background: #00796b;
+      color: white;
+      border-radius: 20px;
+      padding: 8px 15px;
       font-size: 0.9rem;
+    }
+    .job-title {
+      font-weight: bold;
+      color: #00695c;
+    }
+    .job-period {
+      font-style: italic;
+      font-size: 0.9rem;
+      color: #777;
     }
     footer {
       text-align: center;
       font-size: 0.85rem;
-      color: #777;
+      color: #555;
       margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid #ccc;
     }
   </style>
 </head>
@@ -79,8 +100,8 @@
     <section class="section">
       <h2>Professional Experience</h2>
       <div>
-        <strong>Sr. Associate – Corro Health, Noida</strong><br/>
-        <em>Aug 2024 – Present</em>
+        <div class="job-title">Sr. Associate – Corro Health, Noida</div>
+        <div class="job-period">Aug 2024 – Present</div>
         <ul>
           <li>Handled follow-ups with insurance/medical groups and managed denials.</li>
           <li>Processed appeals and maintained high-quality documentation standards.</li>
@@ -88,8 +109,8 @@
         </ul>
       </div>
       <div>
-        <strong>Associate – Pacific Global, Noida</strong><br/>
-        <em>Sep 2022 – Aug 2024</em>
+        <div class="job-title">Associate – Pacific Global, Noida</div>
+        <div class="job-period">Sep 2022 – Aug 2024</div>
         <ul>
           <li>Managed payer communication and denial resolutions.</li>
           <li>Organized appeals and supporting documents with precision.</li>
