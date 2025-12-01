@@ -1,155 +1,419 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pronay Sarkar | AR Specialist</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <title>Resume - Pronay Sarkar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
+    :root {
+      --primary: #1f2933;
+      --accent: #2563eb;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --bg: #f9fafb;
+    }
+
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
+
     body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to right, #e0f7fa, #ffffff);
-      color: #333;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: #e5e7eb;
+      padding: 24px;
+      line-height: 1.5;
     }
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 3rem 2rem;
-      background: #ffffff;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
       border-radius: 10px;
-      margin-top: 2rem;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.1);
+      overflow: hidden;
     }
-    header {
-      text-align: center;
-      margin-bottom: 2.5rem;
+
+    .header {
+      padding: 28px 32px 20px 32px;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(135deg, #0f172a, #111827);
+      color: white;
     }
-    h1 {
-      margin: 0;
-      font-size: 2.5rem;
-      color: #00796b;
+
+    .name {
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
     }
-    h2 {
-      color: #004d40;
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 5px;
-      margin-top: 2rem;
+
+    .title {
+      font-size: 14px;
+      color: #e5e7eb;
+      margin-bottom: 12px;
     }
+
     .contact {
-      font-size: 1rem;
-      color: #555;
-    }
-    .section {
-      margin-bottom: 1.5rem;
-    }
-    ul {
-      padding-left: 20px;
-    }
-    .skills, .languages {
+      font-size: 13px;
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 0.5rem;
+      gap: 6px 16px;
+      color: #d1d5db;
     }
-    .badge {
-      background: #00796b;
-      color: white;
-      border-radius: 20px;
-      padding: 8px 15px;
-      font-size: 0.9rem;
+
+    .contact a {
+      color: inherit;
+      text-decoration: none;
     }
+
+    .contact a:hover {
+      text-decoration: underline;
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: 2.1fr 1.1fr;
+      gap: 32px;
+      padding: 24px 32px 28px 32px;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 12px;
+      }
+      .content {
+        grid-template-columns: 1fr;
+        padding: 20px 18px 24px 18px;
+      }
+      .header {
+        padding: 20px 18px 16px 18px;
+      }
+      .name {
+        font-size: 26px;
+      }
+    }
+
+    .section {
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--primary);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title::before {
+      content: "";
+      width: 18px;
+      height: 2px;
+      background: var(--accent);
+      border-radius: 999px;
+    }
+
+    .summary-text {
+      font-size: 14px;
+      color: #374151;
+      text-align: justify;
+    }
+
+    .job {
+      margin-bottom: 14px;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 2px;
+    }
+
     .job-title {
-      font-weight: bold;
-      color: #00695c;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--primary);
     }
-    .job-period {
-      font-style: italic;
-      font-size: 0.9rem;
-      color: #777;
+
+    .job-dates {
+      font-size: 13px;
+      color: var(--muted);
+      white-space: nowrap;
     }
-    footer {
-      text-align: center;
-      font-size: 0.85rem;
-      color: #555;
-      margin-top: 3rem;
-      padding-top: 1rem;
-      border-top: 1px solid #ccc;
+
+    .job-company {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .job ul {
+      margin-left: 18px;
+      margin-top: 3px;
+      font-size: 13px;
+      color: #374151;
+    }
+
+    .job li {
+      margin-bottom: 3px;
+    }
+
+    .sidebar-section {
+      margin-bottom: 18px;
+    }
+
+    .tag-list {
+      list-style: none;
+      margin-top: 6px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag {
+      font-size: 12px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: #111827;
+    }
+
+    .bullet-list {
+      font-size: 13px;
+      color: #374151;
+      margin-top: 4px;
+      margin-left: 16px;
+    }
+
+    .bullet-list li {
+      margin-bottom: 3px;
+    }
+
+    .edu-item {
+      margin-bottom: 12px;
+    }
+
+    .edu-degree {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 2px;
+    }
+
+    .edu-meta {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .footer-contact {
+      border-top: 1px solid var(--border);
+      padding: 10px 32px 12px 32px;
+      font-size: 12px;
+      color: #6b7280;
+      background: #f9fafb;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 16px;
+      justify-content: flex-start;
+    }
+
+    @media (max-width: 768px) {
+      .footer-contact {
+        padding: 10px 18px 12px 18px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>Pronay Sarkar</h1>
+  <main class="page">
+    <!-- HEADER -->
+    <header class="header">
+      <div class="name">PRONAY SARKAR</div>
+      <div class="title">Accounts Receivable Specialist &amp; Hospital Billing</div>
       <div class="contact">
-        Senior Associate | New Delhi, India<br/>
-        📧 pronaysearchingjob@gmail.com | 📞 +91 9711412246
+        <span><a href="mailto:hello@pronaysarkar.com">hello@pronaysarkar.com</a></span>
+        <span><a href="tel:+919711685142">+91-971-168-5142</a></span>
+        <span>10A/10779 Gali 8, WEA, Karol Bagh, New Delhi 110005</span>
       </div>
     </header>
 
-    <section class="section">
-      <h2>Summary</h2>
-      <p>Detail-oriented Accounts Receivable Specialist with 2+ years of experience in US hospital billing, denial management, and account auditing. Strong communication skills with a proven ability to resolve issues, manage payers, and support team collaboration using tools like Excel and client portals.</p>
-    </section>
-
-    <section class="section">
-      <h2>Professional Experience</h2>
+    <!-- BODY -->
+    <section class="content">
+      <!-- LEFT COLUMN -->
       <div>
-        <div class="job-title">Sr. Associate – Corro Health, Noida</div>
-        <div class="job-period">Aug 2024 – Present</div>
-        <ul>
-          <li>Handled follow-ups with insurance/medical groups and managed denials.</li>
-          <li>Processed appeals and maintained high-quality documentation standards.</li>
-          <li>Ensured compliance and supported quality audits.</li>
-        </ul>
+        <!-- SUMMARY -->
+        <section class="section">
+          <h2 class="section-title">Summary</h2>
+          <p class="summary-text">
+            Detail-oriented Accounts Receivable Specialist with over three years of
+            experience in hospital billing and account auditing. Proficient in managing
+            denials, following up with payers, and ensuring timely recovery of insurance
+            payments. Skilled in Microsoft Excel, with strong communication abilities and
+            a positive approach to team interactions.
+          </p>
+        </section>
+
+        <!-- WORK EXPERIENCE -->
+        <section class="section">
+          <h2 class="section-title">Work Experience</h2>
+
+          <!-- R1 RCM -->
+          <div class="job">
+            <div class="job-header">
+              <div class="job-title">R1 RCM</div>
+              <div class="job-dates">Jul 2025 - Present</div>
+            </div>
+            <div class="job-company"></div>
+            <ul>
+              <li>
+                Handle hospital billing and denial management for IPA and Capitated
+                plans under DOFR guidelines.
+              </li>
+              <li>
+                Work extensively on Authorization and Medical Necessity denials and
+                analyze payer policies.
+              </li>
+              <li>
+                Review EOBs, denial codes, and claim documentation to determine
+                corrective actions.
+              </li>
+              <li>
+                Coordinate with internal teams for appeals, clinical review, and
+                patient follow-up.
+              </li>
+              <li>
+                Maintain accurate documentation and ensure HIPAA and payer compliance.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Corro Health -->
+          <div class="job">
+            <div class="job-header">
+              <div class="job-title">Corro Health</div>
+              <div class="job-dates">Aug 2024 - Jul 2025</div>
+            </div>
+            <div class="job-company"></div>
+            <ul>
+              <li>
+                Managed end-to-end hospital billing and denial resolution for IPA and
+                Capitated plans under DOFR guidelines, ensuring accurate claim
+                submission and financial responsibility allocation.
+              </li>
+              <li>
+                Resolved complex denials including authorization, medical necessity,
+                timely filing, eligibility, COB, duplicate, and bundling issues through
+                detailed analysis and payer communication.
+              </li>
+              <li>
+                Prepared appeals and corrected claims with supporting documentation
+                while maintaining HIPAA compliance, coordination with internal teams,
+                and adherence to productivity and SLA standards.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Access Healthcare (Pacific Global) -->
+          <div class="job">
+            <div class="job-header">
+              <div class="job-title">Access Healthcare (formerly Pacific Global)</div>
+              <div class="job-dates">Sep 2022 - Aug 2024</div>
+            </div>
+            <div class="job-company"></div>
+            <ul>
+              <li>
+                Performed end-to-end AR follow-up and denial resolution for multiple
+                Ardent Health hospitals by reviewing claim status, EOBs, and denial
+                codes.
+              </li>
+              <li>
+                Resolved key denials including authorization, medical necessity, timely
+                filing, eligibility, COB, duplicate, and bundled service issues.
+              </li>
+              <li>
+                Prepared appeals and reconsiderations with supporting documents while
+                ensuring accurate documentation and HIPAA compliance.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- EDUCATION -->
+        <section class="section">
+          <h2 class="section-title">Education</h2>
+
+          <div class="edu-item">
+            <div class="job-header">
+              <div class="edu-degree">Bachelor of Science in Botany &ndash; B.Sc (H) Botany</div>
+              <div class="job-dates">May 2017 - Sep 2020</div>
+            </div>
+            <div class="edu-meta">
+              University of Delhi, New Delhi<br />
+              Final CGPA: 5.40
+            </div>
+          </div>
+
+          <div class="edu-item">
+            <div class="job-header">
+              <div class="edu-degree">High School</div>
+              <div class="job-dates">Jul 2016 - Mar 2017</div>
+            </div>
+            <div class="edu-meta">
+              Janta Bal Niketan St. Sec. School, Jaipur<br />
+              Final CGPA/Percentage: 72.60%
+            </div>
+          </div>
+        </section>
       </div>
-      <div>
-        <div class="job-title">Associate – Pacific Global, Noida</div>
-        <div class="job-period">Sep 2022 – Aug 2024</div>
-        <ul>
-          <li>Managed payer communication and denial resolutions.</li>
-          <li>Organized appeals and supporting documents with precision.</li>
-        </ul>
-      </div>
+
+      <!-- RIGHT COLUMN / SIDEBAR -->
+      <aside>
+        <!-- KEY SKILLS -->
+        <section class="sidebar-section">
+          <h2 class="section-title">Key Skills</h2>
+
+          <ul class="bullet-list">
+            <li>Office Suite software</li>
+            <li>Data entry</li>
+            <li>Organizational and time management skills</li>
+            <li>Corporate communications</li>
+            <li>EHR Softwares (Epic &amp; Cerner)</li>
+            <li>Problem solving</li>
+            <li>Customer service</li>
+            <li>Attention to details</li>
+            <li>Teamwork</li>
+            <li>Fluent in English and Bangla</li>
+          </ul>
+        </section>
+
+        <!-- LANGUAGES -->
+        <section class="sidebar-section">
+          <h2 class="section-title">Languages</h2>
+          <ul class="bullet-list">
+            <li>Hindi</li>
+            <li>English</li>
+            <li>Bangla</li>
+          </ul>
+        </section>
+      </aside>
     </section>
 
-    <section class="section">
-      <h2>Education</h2>
-      <p><strong>B.Sc (H) Botany – University of Delhi</strong><br/>Acharya Narendra Dev College, 2017–2020</p>
-      <p><strong>High School – Janta Bal Niketan Sr. Sec. School, Jaipur</strong><br/>Science Stream, 72.6%, 2016–2017</p>
-    </section>
-
-    <section class="section">
-      <h2>Skills</h2>
-      <div class="skills">
-        <div class="badge">Payment Processing</div>
-        <div class="badge">Account Auditing</div>
-        <div class="badge">Denial Management</div>
-        <div class="badge">Microsoft Excel</div>
-        <div class="badge">Time Management</div>
-        <div class="badge">Problem Solving</div>
-        <div class="badge">Communication</div>
-        <div class="badge">Team Collaboration</div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Languages</h2>
-      <div class="languages">
-        <div class="badge">English</div>
-        <div class="badge">Hindi</div>
-        <div class="badge">Bengali</div>
-      </div>
-    </section>
-
-    <footer>
-      &copy; 2025 Pronay Sarkar | AR Specialist
+    <!-- FOOTER CONTACT (REPEATS FROM PDF) -->
+    <footer class="footer-contact">
+      <span><a href="mailto:hello@pronaysarkar.com">hello@pronaysarkar.com</a></span>
+      <span><a href="tel:+919711685142">+91-971-168-5142</a></span>
+      <span>10A/10779 Gali 8, WEA, Karol Bagh, New Delhi 110005</span>
     </footer>
-  </div>
+  </main>
 </body>
 </html>
